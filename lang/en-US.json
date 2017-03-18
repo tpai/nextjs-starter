@@ -1,0 +1,5 @@
+{
+    "greeting": "Hello, world!",
+    "client_rendering": "This section is only client-side rendered.",
+    "loading": "Loading..."
+}

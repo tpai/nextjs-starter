@@ -1,0 +1,5 @@
+{
+    "greeting": "你好，世界！",
+    "client_rendering": "這個區塊只在客戶端渲染時顯示",
+    "loading": "讀取中..."
+}
