@@ -6,8 +6,11 @@ import pageWithIntl from '../src/components/PageWithIntl'
 import Loading from '../src/components/Loading'
 import World from '../static/world.svg'
 
-export default pageWithIntl(() => (
-  <div className={css({ fontSize: '2rem' })}>
+export default pageWithIntl(() => <App />)
+
+export function App() {
+  return (
+    <div className={css({ fontSize: '2rem' })}>
       <FormattedMessage id='greeting' defaultMessage='Hello, World!' /><World style={{ fill: 'green'}} />
       <NoSSR onSSR={<Loading />}>
         <section>
@@ -16,5 +19,6 @@ export default pageWithIntl(() => (
           </h2>
         </section>
       </NoSSR>
-  </div>
-))
+    </div>
+  )
+}

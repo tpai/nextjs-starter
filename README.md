@@ -3,6 +3,7 @@ Front end solution stack based on next.js SSR framework
 
 **Features**
 
+* [jest](https://github.com/zeit/next.js/tree/master/examples/with-jest)
 * [glamor](https://github.com/zeit/next.js/tree/master/examples/with-glamor)
 * [react-intl](https://github.com/zeit/next.js/tree/master/examples/with-react-intl)
 * [svg-components](https://github.com/zeit/next.js/tree/master/examples/svg-components)
