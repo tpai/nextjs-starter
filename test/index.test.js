@@ -1,7 +1,7 @@
 /* global test */
 
 import React from 'react'
-import { App } from '../pages/index.js'
+import { App } from '../src/containers/index.js'
 import zhTW from '../lang/zh-TW.json'
 import createComponentWithIntl from './createComponentWithIntl'
 

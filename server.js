@@ -56,6 +56,7 @@ app.prepare().then(() => {
       req.locale = locale
       req.localeDataScript = getLocaleDataScript(locale)
       req.messages = getMessages(locale)
+      req.initialState = { user: 'Tony' }
       app.render(req, res, '/index', query)
     } else if (routes('/ping')(pathname)) {
       res.send('pong')

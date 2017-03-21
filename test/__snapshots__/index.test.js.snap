@@ -8,6 +8,7 @@ exports[`App should be rendered correctly when locale set to zh-TW 1`] = `
     }
   }
 >
+   
   <span>
     你好，世界！
   </span>
