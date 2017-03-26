@@ -17,6 +17,7 @@ const accepts = require('accepts')
 const glob = require('glob')
 const next = require('next')
 const compression = require('compression')
+const fetch = require('isomorphic-fetch')
 
 const dev = process.env.NODE_ENV !== 'production'
 const app = next({dev})
@@ -50,7 +51,7 @@ const routes = path => route(path);
 app.prepare().then(() => {
   const server = express()
   server.use(compression())
-  server.use((req, res) => {
+  server.use(async (req, res) => {
     const {pathname, query} = parse(req.url, true)
     if (pathname === '/') {
       const accept = accepts(req)
@@ -58,7 +59,8 @@ app.prepare().then(() => {
       req.locale = locale
       req.localeDataScript = getLocaleDataScript(locale)
       req.messages = getMessages(locale)
-      req.initialState = { user: 'Tony' }
+      const wtf = await fetch('https://wtfismyip.com/json').then(res => res.json())
+      req.initialState = {wtf}
       app.render(req, res, '/index', query)
     } else if (routes('/ping')(pathname)) {
       res.send('pong')

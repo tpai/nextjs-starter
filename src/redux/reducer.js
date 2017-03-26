@@ -1,5 +1,5 @@
-import user from './modules/user'
+import wtf from './modules/wtf'
 
 export default {
-  user
+  wtf
 }
