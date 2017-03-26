@@ -16,6 +16,7 @@ const route = require('path-match')({
 const accepts = require('accepts')
 const glob = require('glob')
 const next = require('next')
+const compression = require('compression')
 
 const dev = process.env.NODE_ENV !== 'production'
 const app = next({dev})
@@ -48,6 +49,7 @@ const routes = path => route(path);
 
 app.prepare().then(() => {
   const server = express()
+  server.use(compression())
   server.use((req, res) => {
     const {pathname, query} = parse(req.url, true)
     if (pathname === '/') {
